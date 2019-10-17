@@ -21,7 +21,7 @@ public class Arrays {
         arrayD[0] = new int[3];
         arrayD[1] = new int[2];
         arrayD[2] = new int[4];
-        System.out.println(arrayD[0]);  //[I@3b6eb2ec : [ means that it is array, I - integer, and next - address in memory
+        System.out.println(arrayD[0]);  //[I@3b6eb2ec : [ means that it is array, I - integer, and next - hashcode of this object
         arrayD[0] = new int[]{15, 10, 2};
         arrayD[1][0] = 5;
         System.out.println(arrayD[1][0]);   //5
@@ -30,5 +30,7 @@ public class Arrays {
         int[] arrayInner = arrayD[1];   //changes with 1000 arrayD[1][0] = 5; by copy of link on place in memory
         arrayInner[0] = 1000;
         System.out.println(arrayD[1][0]);  //1000
+
+
     }
 }
