@@ -1,4 +1,5 @@
 package by.belhard.j18.homework2;
+
 import java.util.Arrays;
 
 public class Task6 {
@@ -9,11 +10,11 @@ public class Task6 {
         for (int value : array) {
             arraySum += value;
         }
-        average = ((double) arraySum) / 10;
+        average = ((double) arraySum) / array.length;
         System.out.println("array sum = " + arraySum);
         System.out.println("average value of array = "
-                                + average);
+                + average);
         Arrays.sort(array);
-        System.out.println("mediana = " + array[4]);
+        System.out.println("mediana = " + (array[4] + array[5]) / 2);
     }
 }

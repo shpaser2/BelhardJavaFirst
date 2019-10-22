@@ -10,7 +10,7 @@ public class Task4 {
     public static void main(String[] args) {
         double  proc = 0.12,
                 index = 0.01,
-                startSum = 500;
+                startSum = 5000;
         int years = 15;
         double actualSum = startSum;
         for (int i = 0; i < years; i++) {
