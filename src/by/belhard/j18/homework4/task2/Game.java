@@ -1,4 +1,4 @@
-package by.belhard.j18.homework3.task2;
+package by.belhard.j18.homework4.task2;
 
 public class Game {
     public static void main(String[] args) {
@@ -12,7 +12,7 @@ public class Game {
         player1.showDistance();
         player1.printCurrentPosition();
 
-        // by.belhard.j18.homework3.task2.Player@3c09711b if method Object.toString() not Overrided.
+        // by.belhard.j18.homework4.task2.Player@3c09711b if method Object.toString() not Overrided.
         System.out.println(player1.toString()); //same out as in line below
         System.out.println(player1);            //implicit conversion to string
 

@@ -1,4 +1,4 @@
-package by.belhard.j18.homework2;
+package by.belhard.j18.homework3;
 
 //What to dress if temperature is known.
 public class Task1 {

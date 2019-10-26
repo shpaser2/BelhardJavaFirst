@@ -1,4 +1,4 @@
-package by.belhard.j18.homework2;
+package by.belhard.j18.homework3;
 
 public class Task7 {
     //This shows multiplication table.

@@ -1,7 +1,5 @@
 package by.belhard.j18.homework5.task1;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
 public class Table {
     private int legs;
     private int height;

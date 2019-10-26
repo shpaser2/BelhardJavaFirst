@@ -1,4 +1,4 @@
-package by.belhard.j18.homework1.task2;
+package by.belhard.j18.homework2.task2;
 
 import java.util.Scanner;
 

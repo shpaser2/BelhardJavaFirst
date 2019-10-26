@@ -1,4 +1,4 @@
-package by.belhard.j18.homework2;
+package by.belhard.j18.homework3;
 
 
 //import by.belhard.j18.lesson3.Arrays;
