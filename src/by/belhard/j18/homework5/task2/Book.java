@@ -6,8 +6,31 @@ public class Book {
     private Author author;
     private PageFormat format;
 
-    public Book(String name, int pages, String authorName, String authorSurname, int authorAge, PageFormat format) {
-        Author author = new Author(authorName, authorSurname, authorAge);
+    public Book(String name, int pages, String[] authorNames, String[] authorSurnames, int[] authorAges,
+                PageFormat format) {
+        int authorNamesQuantity = authorNames.length;
+        int authorSurnamesQuantity = authorSurnames.length;
+        int authorAgesQuantity = authorAges.length;
+        int maxLength = 0;
+        if(authorNamesQuantity >= authorSurnamesQuantity){
+            if(authorNamesQuantity > authorAgesQuantity) {
+                maxLength = authorNamesQuantity;
+            }else{
+                maxLength = authorAgesQuantity;
+            }
+        }else{
+            if(authorSurnamesQuantity > authorAgesQuantity) {
+                maxLength = authorSurnamesQuantity;
+            }else{
+                maxLength = authorAgesQuantity;
+            }
+        }
+        for(int index = 0; index < maxLength; index++){
+
+        }
+
+
+        //Author author = new Author(authorName, authorSurname, authorAge);
         this.setName(name);
         this.setPages(pages);
         this.author = author;
