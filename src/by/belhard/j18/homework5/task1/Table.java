@@ -7,7 +7,8 @@ public class Table {
     private TableShape shape;
     private int price;
 
-    public Table(int legs, int height, TableMaterial material, TableShape shape, int price) {
+    public Table(int legs, int height, TableMaterial material,
+                 TableShape shape, int price) {
         this.legs = legs;
         this.height = height;
         this.material = material;
@@ -19,13 +20,13 @@ public class Table {
         this.legs = 4;
         this.height = 85;
         this.material = TableMaterial.WOOD;
-        this.shape = TableShape.RECTANGULAR ;
+        this.shape = TableShape.RECTANGULAR;
         this.price = 40;
     }
 
     @Override
     public String toString() {
-        return "Table with" + legs + "legs, " + height + " sm height. " +
+        return "Table with " + legs + " legs, " + height + " sm height. " +
                 "Material: " + material + ". Shape: " + shape +
                 ". Price: " + price + ".\n";
     }
