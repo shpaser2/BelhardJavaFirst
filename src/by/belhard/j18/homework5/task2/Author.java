@@ -1,28 +1,18 @@
 package by.belhard.j18.homework5.task2;
 
 public class Author {
+    public static final int noAge = 0;
+    public static final String noName = "emptyName";
+    public static final String noSurname = "emptySurname";
+
     private String name;
     private String surname;
     private int age;
 
     public Author(String name, String surname, int age) {
-        if(name != null && !name.isEmpty()) {
-            this.name = name;
-        }else{
-            this.name = "empty value";
-        }
-
-        if(surname != null && !surname.isEmpty()) {
-            this.surname = surname;
-        }else{
-            this.surname = "empty value";
-        }
-
-        if(age > 2) {
-            this.age = age;
-        }else{
-            this.age = 123;
-        }
+        this.setAge(age);
+        this.setName(name);
+        this.setSurname(surname);
     }
 
     public String getName() {
@@ -37,7 +27,7 @@ public class Author {
         if(name != null && !name.isEmpty()) {
             this.name = name;
         }else{
-            this.name = "empty value";
+            this.name = noName;
         }
     }
 
@@ -45,7 +35,7 @@ public class Author {
         if(surname != null && !surname.isEmpty()) {
             this.surname = surname;
         }else{
-            this.surname = "empty value";
+            this.surname = noSurname;
         }
     }
 
@@ -53,7 +43,7 @@ public class Author {
         if(age > 2) {
             this.age = age;
         }else{
-            this.age = 123;
+            this.age = noAge;
         }
     }
 
@@ -63,8 +53,13 @@ public class Author {
 
     @Override
     public String toString(){
-        return "Имя автора " + name + ", " +
-                "фамилия автора " + surname + ", " +
-                "возраст автора " + age;
+        String result = "";
+        if(!name.equals(null) && !name.isEmpty() && name != noName)
+            result += "Имя автора " + name + ", ";
+        if(!surname.equals(null) && !surname.isEmpty() && surname != noSurname)
+            result += "фамилия автора " + surname + ", ";
+        if(age != noAge && age > 0)
+            result += "возраст автора " + age + ", ";
+        return result;
     }
 }
