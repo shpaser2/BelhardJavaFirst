@@ -1,5 +1,7 @@
 package by.belhard.j18.lesson6.inherit;
 
+import java.util.Objects;
+
 public class Person {
     private String name;
     private int age;
@@ -30,5 +32,18 @@ public class Person {
                 ", age=" + age +
                 ", weight=" + weight +
                 '}';
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true; //ссылка на один и тот же объект
+        if (o == null || getClass() != o.getClass()) return false;  //объект нулевой или у них классы разного типа
+        Person person = (Person) o; //если классы объектов одинаковые, приведем оба к одному типу
+        return age == person.age && Objects.equals(name, person.name); //сравниваем числа и имена
     }
 }
