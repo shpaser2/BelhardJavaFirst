@@ -2,7 +2,7 @@ package by.belhard.j18.lesson6;
 
 import java.util.Random;
 
-public class Try2 {
+public class RandomUsage {
     public static void main(String[] args) {
         double random = Math.random();
         System.out.println(random);
