@@ -5,14 +5,15 @@ public class Wardrobe {
     private Clothes[] shelves = new Clothes[shelvesLimit];
 
     public void put (Clothes thing, int shelveNumber){
-        if(shelveNumber < shelvesLimit) {
-            if (shelves[shelveNumber] == null ){
-                shelves[shelveNumber] = thing;
-            }else{
-                System.out.println("shelve is not empty");
-            }
-        }else{
+        if(shelveNumber >= shelvesLimit && shelveNumber < 0) {
             System.out.println("wrong shelve number");
+            return;
+        }
+        if (shelves[shelveNumber] == null ){
+            shelves[shelveNumber] = thing;
+            System.out.printf("Put %s on shelve %d. \n",thing, shelveNumber);
+        }else{
+            System.out.println("shelve is not empty");
         }
     }
 
@@ -21,6 +22,7 @@ public class Wardrobe {
         for (int i = 0; i < shelvesLimit; i++) {
             if (shelves[i] == null) {
                 shelves[i] = thing;
+                System.out.printf("Trow %s on shelve with number %d. \n", thing, i);
                 result = true;
                 break;
             }
@@ -30,20 +32,21 @@ public class Wardrobe {
     }
 
     public Clothes take (int shelveNumber){
-        Clothes thing = new Clothes();
+        Clothes result = null;
         if (shelves[shelveNumber] == null ){
-            System.out.println("shelve is not empty");
+            System.out.println("shelve is empty");
         }else{
-            thing = shelves[shelveNumber];
+            result = shelves[shelveNumber];
+            shelves[shelveNumber] = null;
         }
-        return thing;
+        return result;
     }
 
     public void viewAll(){
         int emptyShelves = 0;
         for (Clothes thing : shelves) {
             if(thing != null){
-                System.out.println(thing.toString());
+                System.out.print(thing + " ");
             }else{
                 emptyShelves++;
             }

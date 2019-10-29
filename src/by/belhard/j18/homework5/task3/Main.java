@@ -8,5 +8,7 @@ public class Main {
         wardrobe.throwThing(new Clothes("jacket"));
         wardrobe.put(new Clothes("trousers"), 2);
         wardrobe.viewAll();
+        wardrobe.take(2);
+        wardrobe.viewAll();
     }
 }

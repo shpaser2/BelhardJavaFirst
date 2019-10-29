@@ -7,7 +7,7 @@ public class Main {
                 new Table(1, 80, TableMaterial.GLASS, TableShape.ROUND, 90),
                 new Table()};
         for (Table table : tablesCatalog) {
-            System.out.print(table.toString());
+            System.out.print(table);
         }
     }
 }

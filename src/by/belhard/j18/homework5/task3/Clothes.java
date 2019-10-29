@@ -1,7 +1,7 @@
 package by.belhard.j18.homework5.task3;
 
 public class Clothes {
-    private String name;
+    private String name;        //title
 
     public Clothes(String name) {
         this.name = name;
