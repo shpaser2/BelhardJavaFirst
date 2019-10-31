@@ -1,6 +1,6 @@
-package by.belhard.j18.lesson7;
+package by.belhard.j18.lesson7.hashcodeExample;
 
-public class hashExample {
+public class HashExample {
     public static void main(String[] args) {
         Object object = new Object();
         System.out.println(object);

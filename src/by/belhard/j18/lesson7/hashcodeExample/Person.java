@@ -1,4 +1,4 @@
-package by.belhard.j18.lesson7;
+package by.belhard.j18.lesson7.hashcodeExample;
 
 import java.util.Objects;
 

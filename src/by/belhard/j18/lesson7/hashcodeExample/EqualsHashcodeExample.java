@@ -1,4 +1,4 @@
-package by.belhard.j18.lesson7;
+package by.belhard.j18.lesson7.hashcodeExample;
 
 public class EqualsHashcodeExample {
     public static void main(String[] args) {
