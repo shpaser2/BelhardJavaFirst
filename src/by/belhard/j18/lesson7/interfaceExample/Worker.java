@@ -3,12 +3,12 @@ package by.belhard.j18.lesson7.interfaceExample;
 public class Worker implements Workable, Eatable {
 
     @Override
-    public void eat(String dish) {
-
+    public void work() {
+        System.out.println("Work hard");
     }
 
     @Override
-    public void work(String param) {
-        System.out.println("Work hard");
+    public void eat(String dish) {
+        System.out.println("Eat " + dish);
     }
 }
