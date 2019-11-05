@@ -5,7 +5,7 @@ public class InterfaceExample {
         System.out.println(Workable.defaultAge);
 
         Workable workable = new Worker();
-        workable.work();
+        workable.work("s");
 
     }
 }
