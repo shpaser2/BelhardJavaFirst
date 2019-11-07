@@ -14,12 +14,6 @@ public class Sedan extends Car {
     private static final List<FuelType> possibleFuelTypes = Arrays.asList(FuelType.AI92, FuelType.AI98);
 
     public Sedan(String title, boolean wheelsOkState, FuelSystem fuelSystem) {
-        super(title, WheelType.SMALL, wheelsOkState, check(fuelSystem));
-    }
-
-    private static FuelSystem check(FuelSystem fuelSystem) {
-        if(possibleFuelTypes.contains(fuelSystem.getType()))
-
-            asd;askldjflkdsh
+        super(title, WheelType.SMALL, wheelsOkState, checkFuel(fuelSystem, possibleFuelTypes));
     }
 }

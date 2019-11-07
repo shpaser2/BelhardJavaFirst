@@ -10,10 +10,11 @@ import java.util.List;
 
 public class Bus extends Car {
 
-    private static final List<FuelType> possibleFuelTypes = Arrays.asList(FuelType.AI92, FuelType.AI98);
+    private static final List<FuelType> possibleFuelTypes =
+            Arrays.asList(FuelType.AI92, FuelType.AI98, FuelType.DIESEL);
 
     public Bus(String title, boolean wheelsOkState, FuelSystem fuelSystem) {
-        super(title, WheelType.MEDIUM, wheelsOkState, checkFuel(fuelSystem));
+        super(title, WheelType.MEDIUM, wheelsOkState, checkFuel(fuelSystem, possibleFuelTypes));
     }
 
 

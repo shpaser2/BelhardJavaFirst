@@ -2,6 +2,8 @@ package by.belhard.j18.lesson8.autoService.cars;
 
 import by.belhard.j18.lesson8.autoService.exceptions.InvalidFuelParameterException;
 
+import java.util.List;
+
 public abstract class Car{
 
     private String title;
@@ -26,6 +28,10 @@ public abstract class Car{
         return wheels;
     }
 
+    public boolean isWheelsOkState() {
+        return wheelsOkState;
+    }
+
     public int fillFuel(int newValue){
         return fuelSystem.fillFuel(newValue);
     }
@@ -41,5 +47,12 @@ public abstract class Car{
             System.out.println(e.getMessage());
         }
 
+    }
+    public static FuelSystem checkFuel(FuelSystem fuelSystem, List<FuelType> list) {
+
+        if (list.contains(fuelSystem.getType()))
+            return fuelSystem;
+
+        throw new InvalidFuelParameterException("Invalid fuel type");
     }
 }

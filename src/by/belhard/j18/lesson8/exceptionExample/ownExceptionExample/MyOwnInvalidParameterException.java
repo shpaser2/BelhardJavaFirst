@@ -6,6 +6,7 @@ public class MyOwnInvalidParameterException extends Exception {
     }
 
     private static String prepareMethod(int i1, int i2){
+
         return String.format("Invalid parameters: %d, %d", i1, i2);
     }
 }
