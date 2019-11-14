@@ -1,7 +1,5 @@
 package by.belhard.j18.lesson10.threads;
 
-import java.sql.SQLOutput;
-
 public class Main {
     public static void main(String[] args) throws InterruptedException{
         //Threads are created
@@ -10,19 +8,36 @@ public class Main {
         Thread thread3 = new Thread(new MyRunnableThread("thread3"));
         //Create daemon thread with instance of based on anonymous
         // class with Runnable interface.
-        Thread threadDaemon = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    for (;;) {
-                        Thread.sleep(200);
-                        System.out.println(".");
-                    }
-                }catch(InterruptedException e){
-                    e.printStackTrace();
+//        Thread threadDaemon = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    for (;;) {
+//                        Thread.sleep(200);
+//                        System.out.println(".");
+//                    }
+//                }catch(InterruptedException e){
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
+        //example of creating deamon thread with lambda
+            //in this lambda we wrote implementation of run()
+        //It works only with @FunctionalInterface.
+        //  Interface, where only one method is abstract.
+        //  Why Runnable? Because Thread() requires only Runnable with run().
+        //If there are only 1 param, then () before -> is not necessary.
+        Thread threadDaemon = new Thread(() -> {
+            try {
+                for (;;) {
+                    Thread.sleep(200);
+                    System.out.println(".");
                 }
+            }catch(InterruptedException e){
+                e.printStackTrace();
             }
         });
+
 //        //sequence of calls
 //        thread1.run();
 //        thread2.run();
