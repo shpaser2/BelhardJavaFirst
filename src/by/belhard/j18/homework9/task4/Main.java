@@ -11,6 +11,6 @@ public class Main {
         List<Transaction> transactions = TransactionsReader.readTransactions("input2.txt");
         List<Account> newAccounts = TransactionsProcessing.doTransactions(accounts, transactions);
 
-        AccountsWriter.
+        AccountsWriter.writeAccounts(newAccounts, "output.txt");
     }
 }

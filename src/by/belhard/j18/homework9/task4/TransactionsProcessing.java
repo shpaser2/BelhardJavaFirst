@@ -30,15 +30,15 @@ public class TransactionsProcessing {
                     .filter(a -> transaction.getReceiver().equals(a.getName()))
                     .findAny()  //optional object, which is wrapper under other result object from filter above
                     .get();         //receive our result object from wrapper. Without check is it empty because we have done this check before.
+
+            sendMoney(sender, receiver, transaction.getAmount());
         }
-
-
     }
 
     private static boolean validateTransaction(Transaction transaction, List<Account> accounts){
         if(accounts.stream().anyMatch(a -> transaction.getSender().equals(a.getName()))
-            && accounts.stream().anyMatch(a -> transaction.getReceiver().equals(a.getName())
-            && transaction.getAmount() >= 0)
+            && accounts.stream().anyMatch(a -> transaction.getReceiver().equals(a.getName()))
+            && transaction.getAmount() >= 0
         ){
             Account sender =  accounts
                     .stream()
@@ -50,5 +50,10 @@ public class TransactionsProcessing {
             }
         }
         return false;
+    }
+
+    private static void sendMoney(Account sender, Account receiver, int amount){
+        sender.updateMoney(-amount);
+        receiver.updateMoney(amount);
     }
 }

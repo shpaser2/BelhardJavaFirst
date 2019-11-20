@@ -19,4 +19,13 @@ public class Account {
     public int getAmount() {
         return amount;
     }
+
+    public void updateMoney(int amount){
+        this.amount += amount;
+    }
+
+    @Override
+    public String toString() {
+        return name + ' ' + amount ;
+    }
 }
