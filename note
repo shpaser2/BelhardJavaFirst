@@ -498,6 +498,7 @@ enum может быть использован как класс - добавл
 Всё.
 
 Ctrl + Alt + Shift + S - настройки проекта.
+Ctrl + Alt + S - настройки IDEA.
 
 Для работы с базой надо:
 1) Connection (path, username, password)
