@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
 
-public class newConsole {
+public class ConsoleService {
 
     private static final String WELCOME_MESSAGE =
             "\n" +
