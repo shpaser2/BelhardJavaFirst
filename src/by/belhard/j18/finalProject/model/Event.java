@@ -1,5 +1,6 @@
 package by.belhard.j18.finalProject.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Event {
@@ -7,6 +8,8 @@ public class Event {
     private String title;
     private Date startTime;
     private Date endTime;
+    private ArrayList<Step> steps;
+    private boolean done;
 
     public int getId() {
         return id;
@@ -48,6 +51,13 @@ public class Event {
         this.done = done;
     }
 
-    private boolean done;
-
+    @Override
+    public String toString() {
+        return "Event{" +
+                "title='" + title + '\'' +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                ", done=" + done +
+                '}';
+    }
 }

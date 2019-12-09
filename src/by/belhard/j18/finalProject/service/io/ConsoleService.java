@@ -66,9 +66,16 @@ public class ConsoleService {
         return Integer.parseInt(getInput());
     }
 
-    /* Think about fulfill of events list and steps list. From db - look at WeaponRepository and PlayersRepository
-     * in maven_example_proj_battle/src/main/java/by/kolbun/belhard/j18/battle/repository/..
+    /**
+     * For events and steps.
+     * @param items
+     * @return position of event/step in event/step list
      */
+    private int makeChoice(List items) {
+        for (int i = 0; i < items.size(); i++)
+            System.out.printf("%d) %s\n", i + 1, items.get(i));
+        return getInputInteger() - 1;
+    }
 
     /**
      * Helps to select event from existing events.
@@ -79,6 +86,28 @@ public class ConsoleService {
         System.out.println("Choose event: \n");
         int chosenEvent = makeChoice(events);
         return events.get(chosenEvent);
+    }
+
+    public void showEvent(List<Event> events, int index){
+        System.out.println(events.get(index).toString());
+    }
+
+    public void showAllEvents(List<Event> events){
+        for (int index = 0; index < events.size(); index++){
+            showEvent(events, index);
+        }
+    }
+
+    List<Event> deleteEvent(List<Event> events, int index){
+
+    }
+
+    List<Event> addEvent(List<Event> events, String[] args){
+
+    }
+
+    List<Event> changeEvent(List<Event> events, int index, String[] args){
+
     }
 
     /**
@@ -92,14 +121,27 @@ public class ConsoleService {
         return steps.get(chosenStep);
     }
 
-    /**
-     * For events and steps.
-     * @param items
-     * @return position of event/step in event/step list
-     */
-    private int makeChoice(List items) {
-        for (int i = 0; i < items.size(); i++)
-            System.out.printf("%d) %s\n", i + 1, items.get(i));
-        return getInputInteger() - 1;
+    public void showStep(List<Step> steps, int index){
+        System.out.println(steps.get(index).toString());
     }
+
+    public void showAllSteps(List<Step> steps){
+        for (Step step : steps) {
+            System.out.println(step.toString());
+        }
+    }
+
+    List<Step> deleteStep(List<Step> steps, int index){
+
+    }
+
+    List<Step> addStep(List<Step> steps, String[] args){
+
+    }
+
+    List<Step> changeStep(List<Step> steps, int index, String[] args){
+
+    }
+
+
 }

@@ -1,5 +1,7 @@
 package by.belhard.j18.finalProject.model;
 
+import java.util.List;
+
 public class Step {
     private int stepId;
     private int nextStepId;
@@ -46,5 +48,24 @@ public class Step {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public void showStep(List<Step> steps, int index){
+        System.out.println(steps.get(index).toString());
+    }
+
+    public void showSteps(List<Step> steps, int index){
+        for (int i = 0; i < steps.size(); i++) {
+            showStep(steps, i);
+        }
+    }
+
+
+    @Override
+    public String toString() {
+        return "Step{" +
+                "stepDescription='" + stepDescription + '\'' +
+                ", done=" + done +
+                '}';
     }
 }
