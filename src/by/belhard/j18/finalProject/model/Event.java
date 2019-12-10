@@ -1,15 +1,31 @@
 package by.belhard.j18.finalProject.model;
 
+
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Event {
-    private int id;
+    private int id = -1;
     private String title;
+    private String eventDescription;
     private Date startTime;
     private Date endTime;
     private ArrayList<Step> steps;
-    private boolean done;
+
+    public Event(String title, Date startTime, Date endTime, ArrayList<Step> steps) {
+        this.title = title;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.steps = steps;
+    }
+
+    public Event(int id, String title, Date startTime, Date endTime, ArrayList<Step> steps) {
+        this.id = id;
+        this.title = title;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.steps = steps;
+    }
 
     public int getId() {
         return id;
@@ -43,13 +59,6 @@ public class Event {
         this.endTime = endTime;
     }
 
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
-    }
 
     @Override
     public String toString() {
@@ -57,7 +66,6 @@ public class Event {
                 "title='" + title + '\'' +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
-                ", done=" + done +
                 '}';
     }
 }

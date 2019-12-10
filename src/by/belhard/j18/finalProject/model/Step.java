@@ -4,11 +4,16 @@ import java.util.List;
 
 public class Step {
     private int stepId;
-    private int nextStepId;
     private int eventId;
     private String stepDescription;
     private boolean done;
 
+    public Step(int stepId, int eventId, String stepDescription, boolean done) {
+        this.stepId = stepId;
+        this.eventId = eventId;
+        this.stepDescription = stepDescription;
+        this.done = done;
+    }
 
     public int getStepId() {
         return stepId;
@@ -16,14 +21,6 @@ public class Step {
 
     public void setStepId(int stepId) {
         this.stepId = stepId;
-    }
-
-    public int getNextStepId() {
-        return nextStepId;
-    }
-
-    public void setNextStepId(int nextStepId) {
-        this.nextStepId = nextStepId;
     }
 
     public int getEventId() {
@@ -59,7 +56,6 @@ public class Step {
             showStep(steps, i);
         }
     }
-
 
     @Override
     public String toString() {
